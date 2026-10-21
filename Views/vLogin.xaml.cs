@@ -1,15 +1,15 @@
+using fushcasinaS3.Views;
+
 namespace fushcasinaS3.Views;
 
 public partial class vLogin : ContentPage
 {
-    string usuario = "";
-    string contrasena = "";
-
+    string usuario = " ";
+    string contrasena = " ";
     public vLogin()
     {
         InitializeComponent();
     }
-
     public vLogin(string usuarioNuevo, string contrasenaNueva)
     {
         InitializeComponent();
@@ -17,26 +17,33 @@ public partial class vLogin : ContentPage
         contrasena = contrasenaNueva;
     }
 
-    private async void btnIniciarSesion(object sender, EventArgs e)
+    private async void btnIniciarSesion_Clicked(object sender, EventArgs e)
     {
-        string usuarioIngresado = txtUsuario.Text;
-        string contrasenaIngresada = txtContrasena.Text;
-
-        if (usuarioIngresado == usuario &&
-            contrasenaIngresada == contrasena)
+        try
         {
-            await Navigation.PushAsync(new vPrincipal(usuario));
+            string usuarioingresado = txtUsuario.Text;
+            string contrasenaIngresada = txtcontrasena.Text;
+            if (usuario == usuarioingresado && contrasena == contrasenaIngresada)
+            {
+                await Navigation.PushAsync(new vPrincipal(usuario));
+            }
+            else
+            {
+                await DisplayAlertAsync("ERROR", "Usuario/Contraseña Incorrectos", "Cerrar");
+                txtUsuario.Text = "";
+                txtcontrasena.Text = "";
+            }
         }
-        else
+        catch (Exception ex)
         {
-            await DisplayAlertAsync("Error",
-                "Usuario o contraseña incorrectos",
-                "OK");
+            await DisplayAlertAsync("ERROR", ex.Message, "Cerrar");
+
         }
     }
-
-    private async void btnRegistrarUsuario(object sender, EventArgs e)
+    private async void btnRegistrarUsuario_Clicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new vRegistro());
     }
+
+
 }

@@ -1,84 +1,75 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-<ContentPage
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="fushcasinaS3.Views.vLogin"
-    Title="VLogin">
-
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="fushcasinaS3.Views.vLogin"
+             Title="vLogin">
     <VerticalStackLayout
         Padding="20"
         Spacing="15">
-
-        <Label
+        <Label 
             Text="INICIO DE SESIÓN"
             FontSize="20"
+            VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <Image
-            Source="https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-127001787.jpg"
-            WidthRequest="150"
-            HorizontalOptions="Center" />
+        <!--IMAGENES-->
+        <!--1. Enlace web (jpg - png)-->
+        <!--2. Archivo jpg - png Dentro de los recursos-->
+        <!--<Image Source="https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-127001787.jpg"
+               WidthRequest="150"/>-->
 
-        <Image
-            Source="login.jpg"
-            WidthRequest="150"
-            HorizontalOptions="Center" />
+        <Image Source="login.jpg"
+               WidthRequest="150"/>
 
-        <Grid
-            RowSpacing="10"
-            ColumnSpacing="10">
-
+        <Grid 
+              RowSpacing="10"
+              ColumnSpacing="10">
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
-
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Label
-                Text="Usuario:"
-                Grid.Row="0"
-                Grid.Column="0" />
+            <Label Text="Usuario:"
+                  FontSize="18"
+                   Grid.Row="0"
+                   Grid.Column="0"/>
+            <Entry x:Name="txtUsuario"
+                   Placeholder="Ingresa el usuario"
+                   Grid.Row="0"
+                   Grid.Column="1"/>
 
-            <Entry
-                x:Name="txtUsuario"
-                Placeholder="Ingrese un usuario"
-                Grid.Row="0"
-                Grid.Column="1" />
 
-            <Label
-                Text="Contraseña:"
-                Grid.Row="1"
-                Grid.Column="0" />
-
-            <Entry
-                x:Name="txtContrasena"
-                Placeholder="Ingrese una contraseña"
-                IsPassword="True"
-                Grid.Row="1"
-                Grid.Column="1" />
-
-            <Button
-                x:Name="btnIniciarSesion"
-                Text="Iniciar Sesión"
-                Clicked="btnIniciarSesion"
-                Grid.Row="2"
-                Grid.Column="0" />
-
-            <Button
-                x:Name="btnRegistrarUsuario"
-                Text="Registrar Usuario"
-                Clicked="btnRegistrarUsuario"
-                Grid.Row="2"
-                Grid.Column="1" />
+            <Label Text="Contraseña:"
+                   FontSize="18"
+                   Grid.Row="1"
+                   Grid.Column="0"/>
+            <Entry x:Name="txtcontrasena"
+                   Placeholder="Ingresa la contraseña"
+                   IsPassword="True"
+                   Grid.Row="1"
+                   Grid.Column="1"/>
+            <Button x:Name="btnIniciarSesion"
+                    Text="Iniciar sesión"
+                    Clicked="btnIniciarSesion_Clicked"
+                    Grid.Row="2"
+                    Grid.Column="0"/>
+            <Button x:Name="btnRegistrarUsuario"
+                    Text="Registrar Usuario"
+                    Clicked="btnRegistrarUsuario_Clicked"
+                    Grid.Row="2"
+                    Grid.Column="1"/>
 
         </Grid>
 
-    </VerticalStackLayout>
 
+
+
+
+
+    </VerticalStackLayout>
 </ContentPage>
