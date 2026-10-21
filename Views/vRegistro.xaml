@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="fushcasinaS3.Views.vRegistro"
+    Title="VRegistro">
+
+    <VerticalStackLayout>
+
+        <Label
+            Text="Registrar Usuario"
+            FontSize="20"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
+
+        <Entry
+            x:Name="txtUsuarioNuevo"
+            Placeholder="Ingrese el nuevo usuario" />
+
+        <Entry
+            x:Name="txtContrasenaNueva"
+            Placeholder="Ingrese la nueva contraseña"
+            IsPassword="True" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button
+                x:Name="btnGuardarUsuario"
+                Text="Guardar usuario"
+                Grid.Row="0"
+                Grid.Column="0"
+                Clicked="btnGuardarUsuario_Clicked" />
+
+            <Button
+                x:Name="btnCancelar"
+                Text="Cancelar"
+                Grid.Row="0"
+                Grid.Column="1"
+                Clicked="btnCancelar_Clicked" />
+
+        </Grid>
+
+    </VerticalStackLayout>
+
+</ContentPage>
