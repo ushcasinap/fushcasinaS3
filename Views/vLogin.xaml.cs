@@ -4,46 +4,50 @@ namespace fushcasinaS3.Views;
 
 public partial class vLogin : ContentPage
 {
-    string usuario = " ";
-    string contrasena = " ";
+    string usuario = "";
+    string contrasenia = "";
+
     public vLogin()
     {
         InitializeComponent();
     }
-    public vLogin(string usuarioNuevo, string contrasenaNueva)
+
+    public vLogin(string UsuarionNuevo, string contraseniaNueva)
     {
         InitializeComponent();
-        usuario = usuarioNuevo;
-        contrasena = contrasenaNueva;
+        usuario = UsuarionNuevo;
+        contrasenia = contraseniaNueva;
     }
 
     private async void btnIniciarSesion_Clicked(object sender, EventArgs e)
     {
         try
         {
-            string usuarioingresado = txtUsuario.Text;
-            string contrasenaIngresada = txtcontrasena.Text;
-            if (usuario == usuarioingresado && contrasena == contrasenaIngresada)
+            string usuarioIngresado = txtUsuario.Text;
+            string contraseniaIngresada = txtContrasenia.Text;
+
+            if (usuario == usuarioIngresado && contrasenia == contraseniaIngresada)
             {
                 await Navigation.PushAsync(new vPrincipal(usuario));
             }
             else
             {
-                await DisplayAlertAsync("ERROR", "Usuario/Contraseña Incorrectos", "Cerrar");
+                await DisplayAlertAsync("ERROR", "Usuario/Contrasenia incorrectos", "Cerrar");
                 txtUsuario.Text = "";
-                txtcontrasena.Text = "";
+                txtContrasenia.Text = "";
             }
+
         }
         catch (Exception ex)
         {
+
             await DisplayAlertAsync("ERROR", ex.Message, "Cerrar");
 
         }
     }
+
     private async void btnRegistrarUsuario_Clicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new vRegistro());
     }
-
-
 }

@@ -6,6 +6,15 @@
     x:Class="fushcasinaS3.Views.vRegistro"
     Title="VRegistro">
 
+    <ContentPage.Resources>
+        <Style TargetType="Button" >
+            <Setter Property="BackgroundColor" Value="Red" />
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="FontSize" Value="20"/>
+
+        </Style>
+    </ContentPage.Resources>
+
     <VerticalStackLayout>
 
         <Label
@@ -36,6 +45,7 @@
             <Button
                 x:Name="btnGuardarUsuario"
                 Text="Guardar usuario"
+                Style="{StaticResource BotonGlobal}"
                 Grid.Row="0"
                 Grid.Column="0"
                 Clicked="btnGuardarUsuario_Clicked" />
