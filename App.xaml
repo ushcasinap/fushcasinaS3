@@ -4,16 +4,13 @@
              xmlns:local="clr-namespace:fushcasinaS3"
              x:Class="fushcasinaS3.App">
     <Application.Resources>
+        <ResourceDictionary>
         <Style x:Key="BotonGlobal" TargetType="Button">
             <Setter Property="BackgroundColor" Value="Bisque"/>
             <Setter Property="TextColor" Value="Blue"/>
-           
+
         </Style>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-            </ResourceDictionary.MergedDictionaries>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
